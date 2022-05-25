@@ -4,7 +4,7 @@ import Profile from '~/pages/Profile';
 import NotFound from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
-import { HeaderOnly } from '~/components/Layout';
+import { HeaderOnly } from '~/components/Layouts';
 //Layout
 <HeaderOnly />;
 //PublicRoutes
