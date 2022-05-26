@@ -19,9 +19,12 @@
 }
 .logo {
 }
+.search,
+.search-results {
+  width: 361px;
+}
 .search {
   position: relative;
-  width: 361px;
   height: var(--search-height);
   padding-left: 16px;
   display: flex;
@@ -53,6 +56,14 @@
 input:not(:placeholder-shown) ~ .search-btn {
   color: rgba(22, 24, 35, 0.75);
 }
+
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  color: rgba(22, 24, 35, 0.5);
+}
+
 .clear,
 .loading {
   position: absolute;
