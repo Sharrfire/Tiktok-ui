@@ -27,12 +27,14 @@ const MENU_ITEMS = [
       title: 'language',
       data: [
         {
-          code: 'en',
-          title: 'English',
-        },
-        {
+          type: 'language',
           code: 'vi',
           title: 'Tiếng việt',
+        },
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English',
         },
       ],
     },
@@ -47,6 +49,15 @@ function Header() {
       setSearchResult([]);
     }, 1000);
   });
+  // handle logic
+  const handleMenuChange = (menuItem) => {
+    switch (menuItem.type) {
+      case ' language':
+        //Handle change language
+        break;
+      default:
+    }
+  };
 
   return (
     <header className={cx('warper')}>
@@ -84,7 +95,7 @@ function Header() {
         <div className={cx('actions ')}>
           <Button text>Upload</Button>
           <Button primary>Login</Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
