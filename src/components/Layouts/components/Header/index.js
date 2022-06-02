@@ -25,7 +25,7 @@ import styles from './Header.module.scss';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
 import Image from '../Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -106,7 +106,7 @@ function Header() {
             <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
             <button className={cx('search-btn')}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -114,10 +114,18 @@ function Header() {
         <div className={cx('actions')}>
           {currentUser ? (
             <>
-              <Tippy content='Upload video' placement='bottom' delay={(0, 200)}>
+              <Tippy delay={[0, 50]} content='Upload video' placement='bottom'>
                 <button className={cx('action-btn')} type='button'>
                   <UploadIcon />
+                </button>
+              </Tippy>
+              <Tippy delay={[0, 50]} content='Message' placement='bottom'>
+                <button className={cx('action-btn')} type='button'>
                   <MessageIcon />
+                </button>
+              </Tippy>{' '}
+              <Tippy delay={[0, 50]} content='Inbox' placement='bottom'>
+                <button className={cx('action-btn')} type='button'>
                   <InboxIcon />
                 </button>
               </Tippy>
