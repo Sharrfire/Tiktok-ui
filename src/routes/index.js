@@ -11,8 +11,7 @@ import { HeaderOnly } from '~/components/Layouts';
 const publicRoutes = [
   { path: '/', component: Home },
   { path: '/following', component: Following },
-  { path: '/profile', component: Profile },
-  { path: '/profile', component: NotFound },
+  { path: '/@:nickname', component: Profile },
   { path: '/search', component: Search, layout: null },
   { path: '/upload', component: Upload, layout: HeaderOnly },
   //   { path: '/', component: Home, layout: DefaultLayout },

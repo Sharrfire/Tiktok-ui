@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEllipsisVertical,
@@ -13,14 +11,13 @@ import {
   faA,
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 
 import Button from '~/components/Button';
-
 import image from '~/assets/images';
 import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '../Image';
 import Search from '../Search';
 const cx = classNames.bind(styles);
@@ -44,6 +41,7 @@ const MENU_ITEMS = [
       ],
     },
   },
+
   { icon: <FontAwesomeIcon icon={faCircleQuestion} />, title: 'Feedback and help', to: '/feedback' },
   { icon: <FontAwesomeIcon icon={faKeyboard} />, title: 'Keyboard shortcuts' },
 ];
