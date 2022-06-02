@@ -10,16 +10,13 @@ import {
   faMagnifyingGlass,
   faSpinner,
   faEllipsisVertical,
-  faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
-  faUser,
   faGears,
-  faDoorClosed,
-  faDoorOpen,
   faSignOut,
+  faA,
 } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -28,10 +25,12 @@ import styles from './Header.module.scss';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '../Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
-    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    icon: <FontAwesomeIcon icon={faA} />,
     title: 'English',
     children: {
       title: 'language',
@@ -117,7 +116,9 @@ function Header() {
             <>
               <Tippy content='Upload video' placement='bottom' delay={(0, 200)}>
                 <button className={cx('action-btn')} type='button'>
-                  <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                  <UploadIcon />
+                  <MessageIcon />
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -129,10 +130,11 @@ function Header() {
           )}
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
                 alt='Dinh Ngoc Thai'
                 src='https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/273152529_4821373474626367_7620855437813114053_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NRTdewH8rmQAX-yoNIQ&tn=OZz1knuF3aOr8wgk&_nc_ht=scontent.fsgn15-1.fna&oh=00_AT905X2FdOSWD8C_B5SLjmMdE5MJMUlZE8Y3LgzWzflFJw&oe=6293A886'
+                fallback='https://icon-library.com/images/icon-user/icon-user-15.jpg'
               />
             ) : (
               <button className={cx('more-btn')}>

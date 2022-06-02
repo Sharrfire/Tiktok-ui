@@ -22,6 +22,7 @@ html {
 }
 body {
   font-family: 'IBM Plex Sans', sans-serif;
+  // font-family: 'ProximaNova', 'IBM Plex Sans';
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -37,6 +38,18 @@ a[href] {
   color: var(--text-color);
   text-decoration: none;
 }
+// //Fonts-emmbeded
+// @font-face {
+//   font-family: ProximaNova;
+//   src: url('/assets/fonts/Proxima-Nova-Semibold.woff');
+//   font-weight: 700;
+// }
+// @font-face {
+//   font-family: ProximaNova;
+//   src: url('/assets/fonts/Proxima-Nova-Regular.woff');
+//   font-weight: 400;
+// }
+
 //Custom tippy tooltip
 body {
   .tippy-box {
