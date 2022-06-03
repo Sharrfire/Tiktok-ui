@@ -10,6 +10,7 @@
   justify-content: center;
   width: 100%;
 }
+
 .inner {
   height: 100%;
   width: var(--default-layout-width);
@@ -17,6 +18,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.logo-link {
+  display: flex;
 }
 //Actions
 .actions {
@@ -51,7 +55,7 @@
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--white);
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--primary);
 }
 

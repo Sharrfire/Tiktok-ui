@@ -12,7 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
+import routeConfig from '~/configs/routes';
 import Button from '~/components/Button';
 import image from '~/assets/images';
 import styles from './Header.module.scss';
@@ -68,9 +70,9 @@ function Header() {
   return (
     <header className={cx('warper')}>
       <div className={cx('inner')}>
-        <div className={cx('logo')}>
+        <Link to={routeConfig.home} className={cx('logo-link')}>
           <img src={image.logo} alt='Tiktok' />
-        </div>
+        </Link>
 
         {/* Search */}
         <Search />
