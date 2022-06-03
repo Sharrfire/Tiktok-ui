@@ -78,6 +78,7 @@ function Header() {
         <Search />
         <div className={cx('actions')}>
           {currentUser ? (
+            // Using <div> of <>  tag around the reference element solves Tippy warning
             <>
               <Tippy delay={[0, 50]} content='Upload video' placement='bottom'>
                 <button className={cx('action-btn')} type='button'>

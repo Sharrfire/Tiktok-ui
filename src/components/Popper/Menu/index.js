@@ -30,6 +30,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultfn 
     });
   };
   return (
+    // Using <div> of <>  tag around the reference element solves Tippy warning
+
     <Tippy
       interactive
       delay={[, 700]}
@@ -48,7 +50,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultfn 
               />
             )}
 
-            {renderItems()}
+            <div className={cx('menu-body')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}

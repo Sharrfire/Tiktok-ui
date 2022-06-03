@@ -8,6 +8,11 @@
 }
 .menu-popper {
   padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-body {
+  overflow-y: auto;
 }
 .menu-item {
   width: 100%;
@@ -27,6 +32,7 @@
 .header {
   position: relative;
   height: 50px;
+  flex-shrink: 0;
   margin-top: -8px;
 }
 .back-btn {
