@@ -11,6 +11,9 @@ import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import useDebounce from '~/hooks/useDebounce';
 
+import React from 'react';
+import PropTypes from 'prop-types';
+
 const cx = classNames.bind(styles);
 function Search() {
   const [searchValue, setSearchValue] = useState('');
