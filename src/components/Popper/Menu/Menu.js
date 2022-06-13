@@ -31,6 +31,21 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultfn 
       );
     });
   };
+  //reset to first page
+  const handleResetMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+  const handleOnBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  };
+  const renderResult = (attrs) => (
+    <div className={cx('menu-list')} tabIndex='-1' {...attrs}>
+      <PopperWrapper className={cx('menu-popper')}>
+        {history.length > 1 && <Header title={current.title} onBack={handleOnBack} />}
+        <div className={cx('menu-body')}>{renderItems()}</div>
+      </PopperWrapper>
+    </div>
+  );
   return (
     // Using <div> of <>  tag around the reference element solves Tippy warning
 
@@ -40,25 +55,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultfn 
       offset={[12, 8]}
       hideOnClick={hideOnClick}
       placement='bottom-end'
-      render={(attrs) => (
-        <div className={cx('menu-list')} tabIndex='-1' {...attrs}>
-          <PopperWrapper className={cx('menu-popper')}>
-            {history.length > 1 && (
-              <Header
-                title={current.title}
-                onBack={() => {
-                  setHistory((prev) => prev.slice(0, prev.length - 1));
-                }}
-              />
-            )}
-
-            <div className={cx('menu-body')}>{renderItems()}</div>
-          </PopperWrapper>
-        </div>
-      )}
-      onHide={() => {
-        setHistory((prev) => prev.slice(0, 1));
-      }}
+      render={renderResult}
+      onHide={handleResetMenu}
     >
       {children}
     </Tippy>
